@@ -3,6 +3,7 @@ import { formatDistanceToNow } from 'date-fns';
 import ptBR from 'date-fns/locale/pt-BR';
 import { CyclesContext } from "../../contexts/CycleContext";
 import { HistoryContainer, HistoryList, Status } from "./styles";
+import { Trash } from 'phosphor-react';
 
 export function History() {
   const { cycles } = useContext(CyclesContext)

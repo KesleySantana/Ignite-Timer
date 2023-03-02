@@ -13,7 +13,7 @@ interface CreateCycleData {
 }
 
 interface CyclesContextType {
-    cycles: Cycle[]
+    cycles: Cycle[],
     activeCycle: Cycle | undefined,
     activeCycleId: string | null,
     amountSecondsPassed: number,
@@ -34,12 +34,12 @@ export function CyclesContextProvider({ children }: CyclesContextProviderProps) 
     {
         cycles: [],
         activeCycleId: null
-    }, () => {
-        const storedStateAsJSON = localStorage.getItem('@ignite-timer:cycles-state-1.0.0')
+        // }, () => {
+        //     // const storedStateAsJSON = localStorage.getItem('@ignite-timer:cycles-state-1.0.0')
 
-        if (storedStateAsJSON) {
-            return JSON.parse(storedStateAsJSON)
-        }
+        //     // if (storedStateAsJSON) {
+        //     //     return JSON.parse(storedStateAsJSON)
+        //     // }
     })
 
     const {cycles, activeCycleId} = cyclesState
@@ -53,11 +53,11 @@ export function CyclesContextProvider({ children }: CyclesContextProviderProps) 
         return 0
     })
 
-    useEffect(() => {
-        const stateJSON = JSON.stringify(cyclesState)
+    // useEffect(() => {
+    //     const stateJSON = JSON.stringify(cyclesState)
         
-        localStorage.setItem('@ignite-timer:cycles-state-1.0.0', stateJSON)
-    }, [cyclesState])
+    //     localStorage.setItem('@ignite-timer:cycles-state-1.0.0', stateJSON)
+    // }, [cyclesState])
 
    
 
